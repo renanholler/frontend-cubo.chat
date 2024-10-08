@@ -7,9 +7,14 @@ export function Dashboard() {
   const [tickets, setTickets] = useState<Ticket[]>([]);
 
   useEffect(() => {
-    api.get('/tickets').then(({ data }) => {
-      setTickets(data);
-    });
+    api
+      .get('/tickets')
+      .then(({ data }) => {
+        setTickets(data);
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar os tickets:', error);
+      });
   }, []);
 
   function handleTicketStatusChange(
