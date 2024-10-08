@@ -15,7 +15,7 @@ interface TicketCardProps {
 export function TicketCard({ status, color, ticket }: TicketCardProps) {
   const lastMessage = ticket.messages?.[0] || null;
   return (
-    <DialogTrigger asChild className="mt-6 w-full">
+    <DialogTrigger asChild className="mt-4 w-full">
       <Card key={ticket.id}>
         <CardHeader className="font-bold">
           <div className="flex">

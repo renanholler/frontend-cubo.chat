@@ -4,6 +4,7 @@ import { api } from '@/utils/api';
 import { TicketCard } from './TicketCard';
 import { TicketModal } from './TicketModal';
 import { Dialog } from './ui/dialog';
+import { Separator } from './ui/separator';
 
 interface TicketsBoardProps {
   title: string;
@@ -41,6 +42,7 @@ export function TicketsBoard({
         <strong>{title}</strong>
         <span>( {tickets.length} )</span>
       </header>
+      {tickets.length > 0 && <Separator className="mt-1" />}
       {tickets.map((ticket) => {
         return (
           <Dialog key={ticket.id}>
